@@ -1,65 +1,407 @@
-<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>     -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <title>Document</title> -->
+
+
+  <style type="text/css">
+    .select2-container--default .select2-selection--multiple {
+      background-color: white;
+      border: 1px solid #aaa;
+      border-radius: 4px;
+      cursor: text;
+      padding-bottom: 5px;
+      padding-right: 5px;
+      position: relative;
+      width: 367px;
+      font-family: Poppins;
+    }
+
+    .select2-container--default {
+      box-sizing: border-box;
+
+      width: 197px !important;
+      font-family: Poppins;
+    }
+
+    * {
+      font-family: sans-serif;
+    }
+
+    #Form1 {
+      width: 100%;
+      height: 325px;
+      margin-top: 25%;
+      font-family: Poppins;
+    }
+
+    .btn {
+      background-color: #503dc2;
+      color: white;
+      width: 34%;
+      height: 22%;
+      font-weight: 500;
+      font-size: 18px;
+      border-radius: 50px;
+      margin-left: 36%;
+      font-family: Poppins;
+    }
+
+    .btn:hover {
+      color: white;
+    }
+
+    .text_h2 {
+      margin-top: 2%;
+      font-weight: bolder;
+
+    }
+
+    .input-group-text {
+      border: none;
+      color: #503dc2;
+      background-color: white;
+      font-weight: 600;
+      font-size: 16px;
+      font-family: Poppins;
+    }
+
+    .newInput {
+      width: 74%;
+      margin-left: 15%;
+      margin-top: 7%;
+      font-family: Poppins;
+    }
+  </style>
+  <style type="text/css">
+    * {
+      font-family: Poppins !important;
+    }
+
+    #Form {
+      width: 100%;
+      height: 500px;
+      margin-top: 25%;
+      background-color: #F7F7F5;
+    }
+
+    .input-group-text {
+      border: none;
+      color: #503dc2;
+      background-color: #F7F7F5;
+      font-weight: 600;
+      font-size: 16px;
+      margin-bottom: -3%;
+    }
+
+    .newInput {
+      width: 94%;
+      margin-top: 7%;
+      margin-left: 2%;
+    }
+
+    .btn_show {
+      background-color: #503dc2;
+      color: white;
+      width: 44%;
+      height: 12%;
+      font-weight: 500;
+      font-size: 18px;
+      border-radius: 50px;
+      margin-left: 30%;
+    }
+
+    .btn_show:hover {
+      color: white;
+    }
+
+    .Input {
+      right: -12%;
+    }
+
+    #btn_U {
+
+      background-color: #503dc2;
+      color: white;
+      border-radius: 50px;
+      font-weight: 600;
+    }
+
+    #btn_I {
+      background-color: white;
+      color: #503dc2;
+      border-radius: 50px;
+      font-weight: 600;
+      margin-left: -5%;
+    }
+
+    #btn_H {
+
+      background-color: #503dc2;
+      color: white;
+      border-radius: 50px;
+      font-weight: 600;
+    }
+
+    #btn_M {
+      background-color: white;
+      color: #503dc2;
+      border-radius: 50px;
+      font-weight: 600;
+      margin-left: -3%;
+    }
+
+    .btn-group {
+      width: 90%;
+      margin-left: 5%;
+      margin-top: 10%
+    }
+
+    .btn_U:hover {
+      color: white
+    }
+
+    .active {
+      background-color: rgb(0, 0, 128);
+      color: white;
+    }
+
+    .description {
+      margin-top: 35%;
+      margin-left: 50px;
+
+    }
+
+    @media only screen and (max-width: 600px) {
+      .dplex {
+        display: inline-table;
+      }
+
+      .btn_show {
+        background-color: #503dc2;
+        color: white;
+        width: 44%;
+        height: 6%;
+        font-weight: 500;
+        font-size: 18px;
+        border-radius: 50px;
+        margin-left: 30%;
+      }
+    }
+
+    @media (min-width: 321px) and (max-width: 480px) {
+
+      .dplex {
+        display: inline-table;
+      }
+
+      .col-md-6 {
+        flex: 0 0 auto;
+        width: 100%;
+      }
+
+
+      .btn_show {
+        background-color: #503dc2;
+        color: white;
+        width: 44%;
+        height: 6%;
+        font-weight: 500;
+        font-size: 18px;
+        border-radius: 50px;
+        margin-left: 30%;
+      }
+
+      .description {
+        margin-top: 10%;
+        margin-left: 0px;
+
+      }
+
+
+
+    }
+
+    /* @media (min-width: 768px) 
+    .col-md-6 {
+      flex: 0 0 auto;
+      width: 100% !important; 
+    }
+    */
+  
+  </style>
+</head>
+
+<body>
+
+
+  <!-- <div class="row col-md-12 col-lg-12 col-sm-12" style="margin-top:30px;margin-bottom: 35px;">
+    <div class="col-md-2 col-lg-2 col-sm-12 text-center">
+      <img [src]="url" align="left" style=" width:150px; margin-left: 100px; ">
+    </div>
+    <div class="col-md-8 col-lg-8 col-sm-12 text-center">
+      <h3> Simple, transparent pricing </h3>
+      <h6 style="#a1b0ac"> No hidden charges, No nonsense  </h6> 
+    </div>
+  
+  </div> -->
 
 
 
 
 
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
-        </li>
-      </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+  <!-- <div id="container" style="margin-bottom: 50px;
+  font-weight: 500; line-height: 1.2;">
+
+    <div id="image" style="float:left;">
+      
+        <img [src]="url" align="left" style=" width:150px; margin-left: 100px; ">
+    </div>
+
+    <div class=" text-center"  id="texts" style="float:left; margin-left: 250px;" > 
+     <h3>
+      <p style=" font-size: 1.75rem; ">
+        Simple, transparent pricing
+      </p> 
+     </h3>
+     <h6>
+      <p  style=" font-size: 1rem;">
+        No hidden charges, No nonsense
+      </p> 
+     </h6>
+    </div>
+
+</div> -->
+
+
+
+  <!-- demo -->
+
+
+
+
+  <div class="row col-md-12 col-lg-12 col-sm-12" style="margin-top:30px;margin-bottom: 35px;">
+    <div class="col-md-2 col-lg-2 col-sm-12 text-center">
+      <img [src]="url" style="width: 100%;  margin-left: 100px; ">
+    </div>
+    <div class="col-md-8 col-lg-8 col-sm-12 text-center">
+      <h3> Simple, transparent pricing </h3>
+      <h6 style="font-family: #a1b0ac"> No hidden charges, No nonsense </h6>
+    </div>
+
+  </div>
+
+  <div class="row  col-lg-12 col-sm-12 mt-10 dplex">
+    <div class="col-lg-6  col-sm-12" style="background-color: #f7f7f7;">
+      <div class="form-group">
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="btn-group">
+              <button type="button" class="btn" id="btn_U" onclick="changeBgWhite()">INR</button>
+              <button type="button" class="btn" id="btn_I" onclick="changeBgBlue()">USD</button>
+              <input type="hidden" id="rup" name="rup" value="1">
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-12">
+
+            <div class="btn-group">
+              <button type="button" class="btn" id="btn_H" onclick="changeHour()">Hourly</button>
+              <button type="button" class="btn" id="btn_M" onclick="changeMonth()">Monthly</button>
+
+              <input type="hidden" id="hourly" name="hourly" value="1">
+
+            </div>
+          </div>
+        </div>
+        <div class="newInput">
+          <span class="input-group-text">
+            Skills &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <select class="js-example-basic-multiple" name="skill[]" id="skill" required>
+              <option value="10">PHP</option>
+              <option value="13">PYTHON</option>
+            </select>
+          </span><br />
+          <span class="input-group-text">
+            <div class="col-lg-5 col-md-5 col-sm-12">
+              <span class="sp">Yrs. Of Experience</span>
+            </div>
+            <div class="col-lg-7 col-md-7">
+              <div class="input-group">
+                <select class="js-example-basic-multiple" name="experiance" id="experiance">
+                  <option value="9">1-3</option>
+                  <option value="10">3-5</option>
+                  <option value="11">5-8</option>
+                  <option value="12">8+</option>
+                </select>
+
+              </div>
+            </div>
+          </span><br />
+          <span class="input-group-text">
+            <div class="col-lg-5 col-md-5 col-sm-12">
+              <span class="sp">Hours Per Day</span>
+            </div>
+            <div class="col-lg-7 col-md-7">
+              <div class="input-group">
+                <select class="js-example-basic-single" name="hpd" id="hpd">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                </select>
+              </div>
+            </div>
+          </span><br />
+          <span class="input-group-text">
+            <div class="col-lg-5 col-md-5 col-sm-12">
+              <span class="sp">Time Zone</span>
+            </div>
+            <div class="col-lg-7 col-md-7">
+              <div class="input-group">
+                <select class="js-example-basic-single" name="timezone" id="timezone">
+
+                  <option value="4">IST</option>
+                  <option value="5">GMT</option>
+                  <option value="6">PST</option>
+                </select>
+              </div>
+            </div>
+          </span><br />
+        </div>
+        <br /><br />
+        <button class="btn btn_show" id="showprice" name="showprice">Show Pricing</button>
+        <input type="hidden" name="hidden" id="hidden" value="0">
+      </div>
+    </div>
+    <div class="col-lg-6 col-sm-12">
+      <div class="col-lg-6 col-md-6 col-sm-12" style="margin-bottom: 143px;"> </div>
+
+      <div class="col-lg-6 col-sm-12">
+        <p id="finaltotal" style="text-align: center;font-size: 24px;margin-left: 29px;"></p>
+      </div>
+
+      <p class="description">The Pricing displayed here are as per the standard rates <br>
+        we charge our customers. For any
+        long-term commitment,<br>
+        please reach us on hello@infiniteai.io OR +91 9890290778 </p>
+
     </div>
   </div>
-</nav>
 
 
 
+  
 
 
+</body>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</html>
