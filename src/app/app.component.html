@@ -101,16 +101,16 @@
           <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-12">
               <div class="btn-group">
-                <button type="button" class="btn" id="btn_U" onclick="changeBgWhite()">INR</button>
-                <button type="button" class="btn" id="btn_I" onclick="changeBgBlue()">USD</button>
+                <button type="button" class="btn" id="btn_U"  (click)="changeBgWhite()">INR</button>
+                <button type="button" class="btn" id="btn_I"  (click)="changeBgBlue()">USD</button>
                 <input type="hidden" id="rup" name="rup" value="1">
               </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12">
 
               <div class="btn-group">
-                <button type="button" class="btn" id="btn_H" onclick="changeHour()">Hourly</button>
-                <button type="button" class="btn" id="btn_M" onclick="changeMonth()">Monthly</button>
+                <button type="button" class="btn" id="btn_H" (click)="changeHour()">Hourly</button>
+                <button type="button" class="btn" id="btn_M" (click)="changeMonth()">Monthly</button>
 
                 <input type="hidden" id="hourly" name="hourly" value="1">
 
